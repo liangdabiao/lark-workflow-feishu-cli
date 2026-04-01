@@ -2,6 +2,7 @@
 
 > 基于 Claude Agent/OpenClaw Skill + 飞书 CLI (lark-cli) 构建的个人 AI 效率基础设施。
 > 将 Claude Agent/OpenClaw 10 大实战用例完整迁移到飞书生态，适合 Claude Agent Skill 和 OpenClaw，用飞书各模块实现所有工作流功能。
+> 特别感谢linuxdo的佬友支持：https://linux.do/t/topic/1868703
 
 ## 目录
 
@@ -33,6 +34,12 @@
 本项目的核心思想：**用飞书作为统一的数据底座和交互界面，用 Claude Code Agent /OpenClaw 作为智能调度中枢，把原本分散在 Gmail、Telegram、Todoist、Slack、Asana 等十几个 SaaS 工具中的个人效率工作流，全部收敛到飞书一个平台内运行。**
 
 每个工作流被封装为一个 **Claude Agent/OpenClaw Skill**（SKILL.md），通过自然语言对话或指令触发，调用 `lark-cli` 操作飞书 API 完成数据读写、消息通知、文档生成等操作。
+
+注意： 如果需要抓取社交网络数据，那么我推荐下载如下skills:
+https://github.com/apify/agent-skills
+
+https://github.com/liangdabiao/tikhub_api_skill
+
 
 ## 环境要求
 
