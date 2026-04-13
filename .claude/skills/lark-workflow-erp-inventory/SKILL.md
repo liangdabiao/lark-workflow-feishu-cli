@@ -128,6 +128,8 @@ lark-cli base +table-list --base-token "<base_token>" --as user
 #### 台账表字段
 
 ```bash
+lark-cli base +field-create --base-token "<base_token>" --table-id "<products_table_id>" --json '{"type":"auto_number","name":"物品编号","style":{"rules":[{"type":"text","text":"SKU-"},{"type":"incremental_number","length":4}]}}' --as user
+sleep 1.5
 lark-cli base +field-create --base-token "<base_token>" --table-id "<products_table_id>" --json '{"type":"text","name":"物品名称"}' --as user
 sleep 1.5
 lark-cli base +field-create --base-token "<base_token>" --table-id "<products_table_id>" --json '{"type":"text","name":"规格型号"}' --as user
@@ -166,6 +168,8 @@ sleep 2
 #### 入库记录表字段
 
 ```bash
+lark-cli base +field-create --base-token "<base_token>" --table-id "<stock_in_table_id>" --json '{"type":"auto_number","name":"入库单号","style":{"rules":[{"type":"text","text":"IN-"},{"type":"incremental_number","length":4}]}}' --as user
+sleep 1.5
 lark-cli base +field-create --base-token "<base_token>" --table-id "<stock_in_table_id>" --json '{"type":"text","name":"供应商"}' --as user
 sleep 1.5
 lark-cli base +field-create --base-token "<base_token>" --table-id "<stock_in_table_id>" --json '{"type":"number","name":"入库数量","style":{"type":"plain","precision":0}}' --as user
@@ -185,6 +189,8 @@ sleep 2
 #### 出库记录表字段
 
 ```bash
+lark-cli base +field-create --base-token "<base_token>" --table-id "<stock_out_table_id>" --json '{"type":"auto_number","name":"出库单号","style":{"rules":[{"type":"text","text":"OUT-"},{"type":"incremental_number","length":4}]}}' --as user
+sleep 1.5
 lark-cli base +field-create --base-token "<base_token>" --table-id "<stock_out_table_id>" --json '{"type":"number","name":"出库数量","style":{"type":"plain","precision":0}}' --as user
 sleep 1.5
 lark-cli base +field-create --base-token "<base_token>" --table-id "<stock_out_table_id>" --json '{"type":"user","name":"领用人","multiple":false}' --as user
@@ -707,7 +713,7 @@ lark-cli base +record-upsert --base-token "<base_token>" --table-id "<products_t
 | `base +record-delete` | `bitable:app` |
 | `base +data-query` | `bitable:app:readonly` |
 | `base +dashboard-create` | `bitable:app` |
-| `im +messages-send` | `im:message` |
+| `im +messages-send` | `im:message:send_as_bot` |
 | `docs +create` | `docx:document:create` |
 
 ---
